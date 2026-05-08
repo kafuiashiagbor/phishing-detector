@@ -1,0 +1,57 @@
+import requests
+import json
+
+url = "http://127.0.0.1:5000/predict"
+sample = {
+    "NumDots": 3,
+    "SubdomainLevel": 1,
+    "PathLevel": 1,
+    "UrlLength": 72,
+    "NumDash": 0,
+    "NumDashInHostname": 0,
+    "AtSymbol": 0,
+    "TildeSymbol": 0,
+    "NumUnderscore": 0,
+    "NumPercent": 0,
+    "NumQueryComponents": 0,
+    "NumAmpersand": 0,
+    "NumHash": 0,
+    "NumNumericChars": 0,
+    "NoHttps": 1,
+    "RandomString": 0,
+    "IpAddress": 0,
+    "DomainInSubdomains": 0,
+    "DomainInPaths": 0,
+    "HttpsInHostname": 0,
+    "HostnameLength": 20,
+    "PathLength": 10,
+    "QueryLength": 0,
+    "DoubleSlashInPath": 0,
+    "NumSensitiveWords": 1,
+    "EmbeddedBrandName": 0,
+    "PctExtHyperlinks": 0,
+    "PctExtResourceUrls": 0,
+    "ExtFavicon": 0,
+    "InsecureForms": 1,
+    "RelativeFormAction": 0,
+    "ExtFormAction": 0,
+    "AbnormalFormAction": -1,
+    "PctNullSelfRedirectHyperlinks": 0,
+    "FrequentDomainNameMismatch": 1,
+    "FakeLinkInStatusBar": 0,
+    "RightClickDisabled": 1,
+    "PopUpWindow": 1,
+    "SubmitInfoToEmail": 0,
+    "IframeOrFrame": 1,
+    "MissingTitle": 1,
+    "ImagesOnlyInForm": 0,
+    "SubdomainLevelRT": -1,
+    "UrlLengthRT": 1,
+    "PctExtResourceUrlsRT": -1,
+    "AbnormalExtFormActionR": 1,
+    "ExtMetaScriptLinkRT": -1,
+    "PctExtNullSelfRedirectHyperlinksRT": 1
+}
+
+response = requests.post(url, json=sample)
+print("Response:", response.json())
